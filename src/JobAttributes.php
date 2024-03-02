@@ -110,9 +110,23 @@ class JobAttributes extends \obray\ipp\AttributeGroup
             case 'media-col':
                 $this->attributes[$name] = new \obray\ipp\CollectionAttribute('media-col', $value);
                 break;
+            case 'media-source':
+                $this->attributes[$name] = new \obray\ipp\Attribute('media-source', $value, \obray\ipp\enums\Types::KEYWORD);
+                break;
+            case 'media-type':
+                $this->attributes[$name] = new \obray\ipp\Attribute('media-type', $value, \obray\ipp\enums\Types::KEYWORD);
+                break;
+            case 'print-color-mode':
+                $this->attributes[$name] = new \obray\ipp\Attribute('print-color-mode', $value, \obray\ipp\enums\Types::KEYWORD);
+                break;
+            case 'page-delivery':
+                $this->attributes[$name] = new \obray\ipp\Attribute('page-delivery', $value, \obray\ipp\enums\Types::KEYWORD);
+                break;
+            case 'sheet-collate':
+                $this->attributes[$name] = new \obray\ipp\Attribute('sheet-collate', $value, \obray\ipp\enums\Types::KEYWORD);
+                break;
             default:
                 throw new \Exception("Invalid attribute ".$name.".");
-                break;
         }
     }
 }
